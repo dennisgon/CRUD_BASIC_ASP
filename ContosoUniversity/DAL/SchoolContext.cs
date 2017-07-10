@@ -6,6 +6,10 @@ namespace ContosoUniversity.DAL
 {
     public class SchoolContext : DbContext
     {
+        public SchoolContext()
+        {
+            this.Configuration.LazyLoadingEnabled = false;
+        }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Departement> Departments { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
